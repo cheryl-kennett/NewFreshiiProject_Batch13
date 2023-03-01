@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -100,5 +101,10 @@ public class FRS_TC_10 {
         System.out.println("Actual title is : " + actualtitle);
         Assert.assertEquals(actualtitle, expectedtitle, "Page title not as expected");
 
+    }
+
+    @AfterTest
+    public void afterTest(){
+        driver.quit();
     }
 }
